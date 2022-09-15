@@ -41,7 +41,6 @@ const typeController = (e) => {
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
-
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
@@ -57,6 +56,9 @@ const typeController = (e) => {
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
+  }else if(key !== questionText[userText.length - 1]){
+    errorCount = errorCount + 1;
+    return false;
   }
   return false;
 };
