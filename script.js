@@ -56,7 +56,7 @@ const typeController = (e) => {
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
-  }else if(key !== questionText[userText.length - 1]){
+  } else if (key !== questionText[userText.length - 1]) {
     errorCount = errorCount + 1;
     return false;
   }
@@ -81,10 +81,12 @@ const gameOver = () => {
   display.classList.add("inactive");
   // show result
   resultModal.innerHTML += `
-    <h1>Finished!</h1>
-    <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
-    <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
-    <button onclick="closeModal()">Close</button>
+
+      <h1>Finished!</h1>
+      <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+      <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
+      <button onclick="closeModal()">Close</button>
+
   `;
 
   addHistory(questionText, timeTaken, errorCount);
